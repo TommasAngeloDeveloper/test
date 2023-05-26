@@ -1,0 +1,4 @@
+$block_inputs_h: 50%; // Размер шрифта по умолчанию
+$block_lable_up_h: (100% -$block_inputs_h)/2; // Ширина Aside
+$block_buttons: 100% - $block_inputs_h - $block_lable_up_h; // Ширина Aside
+$form_w: 25rem;

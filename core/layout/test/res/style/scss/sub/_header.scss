@@ -1,0 +1,165 @@
+.header {
+	width: 100%;
+	height: $header__height;
+	background: $style__bacground;
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+	border-bottom: solid silver 0.05rem;
+	overflow: visible;
+	.header-container {
+		width: 100%;
+		height: 100%;
+		overflow: visible;
+		.header-wrapper {
+			width: 100%;
+			height: 100%;
+			.ta_container {
+				width: 100%;
+				height: 100%;
+				padding: 0.5rem;
+				overflow: visible;
+				.block__logo {
+					display: flex;
+					width: $header__logo_width * 1.5;
+					height: $header__logo_height;
+					justify-content: center;
+					align-items: center;
+					padding: 0rem;
+
+					.logo-container {
+						width: $header__logo_width;
+						height: 100%;
+						.logo-wrapper {
+							display: flex;
+							width: 100%;
+							height: 100%;
+							justify-content: center;
+							align-items: center;
+							.img {
+								border-radius: 50%;
+								width: 80%;
+								height: 80%;
+								box-shadow: 0.3rem 0rem 0.5rem rgba(0, 0, 0, 0.3);
+							}
+						}
+					}
+				}
+				.block__company_name {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					width: 15%;
+					height: 100%;
+					//		margin-right: auto;
+					overflow: visible;
+					.company_name-container {
+						width: 100%;
+						overflow: visible;
+						.company_name-wrapper {
+							width: 80%;
+							background: rgb(226, 226, 226);
+							background: linear-gradient(
+								197deg,
+								rgba(226, 226, 226, 0.7) 0%,
+								rgba(200, 193, 191, 0.7) 41%,
+								rgba(215, 215, 215, 0.7) 63%,
+								rgba(221, 200, 228, 0.7) 100%
+							);
+							border-radius: 0.5rem;
+							box-shadow: 0.3rem 0.3rem 1rem rgba(0, 0, 0, 0.5);
+							.text {
+								display: inline-block;
+								width: 100%;
+								border-radius: 0.5rem;
+								text-align: center;
+								font-size: 2.5rem;
+								font-weight: bolder;
+								color: rgb(255, 187, 0);
+								text-shadow: 1px 1px 1px red;
+								padding: 0.5rem 0;
+							}
+						}
+					}
+				}
+				.block__phones {
+					width: 15%;
+					height: 100%;
+					.phones-container {
+						height: 100%;
+						.phones-wrapper {
+							display: flex;
+							justify-content: center;
+							flex-wrap: wrap;
+							height: 100%;
+							align-content: space-evenly;
+							.phone {
+								.phone-container {
+									height: 100%;
+									.phone-wrapper {
+										.number {
+											display: inline-block;
+											font-size: 1.3rem;
+											font-weight: bold;
+											color: rgb(45, 45, 45);
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+
+				.block__working_hours {
+					width: 15%;
+					height: 100%;
+					.working_hours-container {
+						height: 100%;
+						.working_hours-wrapper {
+							display: flex;
+							flex-wrap: wrap;
+							justify-content: center;
+							align-content: space-evenly;
+							width: 100%;
+							height: 100%;
+							.block__lable {
+								.lable-container {
+									.lable-wrapper {
+										.text {
+											display: inline-block;
+											font-weight: bold;
+											font-size: 1.2rem;
+										}
+									}
+								}
+							}
+							.block__text {
+								.text-container {
+									.text-wrapper {
+										.text {
+											display: inline-block;
+											font-weight: normal;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+
+				.block__adress {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					width: 15%;
+					height: 100%;
+					.adress-container {
+						.adress-wrapper {
+							.text {
+								font-weight: bold;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
