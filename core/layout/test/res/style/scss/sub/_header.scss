@@ -1,9 +1,6 @@
 .header {
 	width: 100%;
 	height: $header__height;
-	background: $style__bacground;
-	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
-	border-bottom: solid silver 0.05rem;
 	overflow: visible;
 	.header-container {
 		width: 100%;
@@ -17,9 +14,11 @@
 				height: 100%;
 				padding: 0.5rem;
 				overflow: visible;
+				justify-content: left;
+				align-items: center;
 				.block__logo {
 					display: flex;
-					width: $header__logo_width * 1.5;
+					width: $header__logo_width;
 					height: $header__logo_height;
 					justify-content: center;
 					align-items: center;
@@ -34,11 +33,11 @@
 							height: 100%;
 							justify-content: center;
 							align-items: center;
+							cursor: pointer;
 							.img {
-								border-radius: 50%;
-								width: 80%;
-								height: 80%;
-								box-shadow: 0.3rem 0rem 0.5rem rgba(0, 0, 0, 0.3);
+								width: 100%;
+								height: 100%;
+								cursor: pointer;
 							}
 						}
 					}
@@ -50,32 +49,25 @@
 					width: 15%;
 					height: 100%;
 					//		margin-right: auto;
+					padding: 0 1rem;
 					overflow: visible;
 					.company_name-container {
 						width: 100%;
 						overflow: visible;
 						.company_name-wrapper {
-							width: 80%;
-							background: rgb(226, 226, 226);
-							background: linear-gradient(
-								197deg,
-								rgba(226, 226, 226, 0.7) 0%,
-								rgba(200, 193, 191, 0.7) 41%,
-								rgba(215, 215, 215, 0.7) 63%,
-								rgba(221, 200, 228, 0.7) 100%
-							);
-							border-radius: 0.5rem;
-							box-shadow: 0.3rem 0.3rem 1rem rgba(0, 0, 0, 0.5);
+							display: inline-block;
+							width: 100%;
+							cursor: pointer;
 							.text {
+								font-family: Segoe UI;
+								color: #2c145e;
 								display: inline-block;
 								width: 100%;
-								border-radius: 0.5rem;
-								text-align: center;
-								font-size: 2.5rem;
-								font-weight: bolder;
-								color: rgb(255, 187, 0);
-								text-shadow: 1px 1px 1px red;
-								padding: 0.5rem 0;
+								text-align: left;
+								font-size: 1.6rem;
+								text-transform: uppercase;
+								line-height: 2.3rem;
+								cursor: pointer;
 							}
 						}
 					}

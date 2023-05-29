@@ -29,6 +29,29 @@ class Controller
 				'routes' => ['routes'],
 			]
 		]]);
+
+		/*****************************************************************************************************************/
+
+		// подключаем файл с информацие о компании
+		$link  = $result__basic['path']['data'] . 'company_info.php';
+		$path_logo = $result__basic['path']['res'] . 'img/logo/';
+		$include = \system\functions\sub::include($link);
+		if (!isset($include['error'])) {
+			$company_info = \company_info\data::getInstance(['path' => [
+				'logo' => $path_logo
+			]]);
+		}
+		$include = \system\functions\sub::include($result__basic['link']['db']['connect']);
+		if (isset($include['error'])) {
+			new \Ex($include['error']);
+		} else {
+			$include = \system\functions\sub::include($result__basic['link']['db']['read']);
+			if (isset($include['error'])) {
+				new \Ex($include['error']);
+			}
+		}
+		/*****************************************************************************************************************/
+
 		if (isset($result__basic['error'])) {
 			new \Ex($result__basic['error']);
 		} else {
@@ -56,6 +79,7 @@ class Controller
 					'class' =>  'view\Controller',
 					'method' =>  'return',
 					'data' => [],
+					'content' => $result__view['view']['content']
 				],
 			]
 		];
@@ -107,7 +131,6 @@ class Controller
 			$return['html']['meta']['js'] += $result['view']['link']['js'];
 		}
 		$return['require'] = $result__view['config']['require'];
-		//	print_array_1($return);
 		return $return;
 	}
 	/**
@@ -144,11 +167,26 @@ class Controller
 							'return_Data' => [
 								'data' => ['link', 'path'],
 								'config' => ['config'],
-							]
+							],
 						]]);
 						if (isset($result['error'])) {
 							new \Ex($result['error']);
 						} else {
+							$method = 'param';
+							$check_ClassAndMethod = \system\functions\sub::check_ClassAndMethod($class, $method);
+
+							if (!isset($check_ClassAndMethod['error'])) {
+								$view_param =  $class::$method(['url_array' => $url_array]);
+								if (isset($view_param['meta'])) {
+									$result['config']['meta'] = $view_param['meta'];
+								}
+								if (isset($view_param['content'])) {
+									$result['view']['content'] = $view_param['content'];
+								} else {
+									$result['view']['content'] = null;
+								}
+							}
+
 							$return = $result;
 						}
 					}

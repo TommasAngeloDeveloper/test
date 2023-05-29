@@ -8,12 +8,6 @@
 .header {
   width: 100%;
   height: 8rem;
-  background: -webkit-gradient(linear, left top, right top, from(rgb(245, 200, 0)), color-stop(35%, rgb(239, 207, 0)), to(rgb(255, 208, 0)));
-  background: -o-linear-gradient(left, rgb(245, 200, 0) 0%, rgb(239, 207, 0) 35%, rgb(255, 208, 0) 100%);
-  background: linear-gradient(90deg, rgb(245, 200, 0) 0%, rgb(239, 207, 0) 35%, rgb(255, 208, 0) 100%);
-  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
-  border-bottom: solid silver 0.05rem;
   overflow: visible;
 }
 .header .header-container {
@@ -30,13 +24,19 @@
   height: 100%;
   padding: 0.5rem;
   overflow: visible;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .header .header-container .header-wrapper .ta_container .block__logo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 10.8rem;
-  height: 7.2rem;
+  width: 5.6rem;
+  height: 5.6rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -46,7 +46,7 @@
   padding: 0rem;
 }
 .header .header-container .header-wrapper .ta_container .block__logo .logo-container {
-  width: 7.2rem;
+  width: 5.6rem;
   height: 100%;
 }
 .header .header-container .header-wrapper .ta_container .block__logo .logo-container .logo-wrapper {
@@ -61,13 +61,12 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  cursor: pointer;
 }
 .header .header-container .header-wrapper .ta_container .block__logo .logo-container .logo-wrapper .img {
-  border-radius: 50%;
-  width: 80%;
-  height: 80%;
-  -webkit-box-shadow: 0.3rem 0rem 0.5rem rgba(0, 0, 0, 0.3);
-          box-shadow: 0.3rem 0rem 0.5rem rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
 }
 .header .header-container .header-wrapper .ta_container .block__company_name {
   display: -webkit-box;
@@ -81,6 +80,7 @@
           align-items: center;
   width: 15%;
   height: 100%;
+  padding: 0 1rem;
   overflow: visible;
 }
 .header .header-container .header-wrapper .ta_container .block__company_name .company_name-container {
@@ -88,24 +88,20 @@
   overflow: visible;
 }
 .header .header-container .header-wrapper .ta_container .block__company_name .company_name-container .company_name-wrapper {
-  width: 80%;
-  background: rgb(226, 226, 226);
-  background: -o-linear-gradient(253deg, rgba(226, 226, 226, 0.7) 0%, rgba(200, 193, 191, 0.7) 41%, rgba(215, 215, 215, 0.7) 63%, rgba(221, 200, 228, 0.7) 100%);
-  background: linear-gradient(197deg, rgba(226, 226, 226, 0.7) 0%, rgba(200, 193, 191, 0.7) 41%, rgba(215, 215, 215, 0.7) 63%, rgba(221, 200, 228, 0.7) 100%);
-  border-radius: 0.5rem;
-  -webkit-box-shadow: 0.3rem 0.3rem 1rem rgba(0, 0, 0, 0.5);
-          box-shadow: 0.3rem 0.3rem 1rem rgba(0, 0, 0, 0.5);
-}
-.header .header-container .header-wrapper .ta_container .block__company_name .company_name-container .company_name-wrapper .text {
   display: inline-block;
   width: 100%;
-  border-radius: 0.5rem;
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: bolder;
-  color: rgb(255, 187, 0);
-  text-shadow: 1px 1px 1px red;
-  padding: 0.5rem 0;
+  cursor: pointer;
+}
+.header .header-container .header-wrapper .ta_container .block__company_name .company_name-container .company_name-wrapper .text {
+  font-family: Segoe UI;
+  color: #2c145e;
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  line-height: 2.3rem;
+  cursor: pointer;
 }
 .header .header-container .header-wrapper .ta_container .block__phones {
   width: 15%;
@@ -436,13 +432,14 @@ body {
   background-color: rgb(255, 255, 255);
 }
 
+.ta_container {
+  max-width: 1520px;
+  padding: 0 1rem;
+}
 .ta_container * {
   -ms-flex-line-pack: start;
       align-content: flex-start;
-}
-
-header {
-  display: none;
+  padding: 0.1rem 0;
 }
 
 .page {
@@ -452,9 +449,8 @@ header {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   width: 100%;
-  min-height: 100%;
+  min-height: auto;
   height: auto;
-  background-color: rgba(162, 162, 162, 0.57);
 }
 
 main {

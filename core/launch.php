@@ -164,13 +164,18 @@ class launch
 					self::add_css($result['html']['meta']['css']);
 					// Добавляем в список js файл
 					self::add_js($result['html']['meta']['js']);
-
 					if (!empty($result['html']['sub'])) {
 						foreach ($result['html']['sub'] as $sub_name => $value) {
 							self::$settings['html'][$sub_name] = $value;
 						}
 					}
-					//print_array_1(self::$settings);
+					// Добавляем контент страницы
+					if (isset($result['html']['view']['content'])) {
+						$content = $result['html']['view']['content'];
+					} else {
+						$content = null;
+					}
+					self::$settings['html']['view']['content'] = $content;
 				}
 			}
 		}

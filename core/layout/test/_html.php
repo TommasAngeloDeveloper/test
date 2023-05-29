@@ -7,10 +7,8 @@ class html
 	private static $settings;
 	function __construct($settings)
 	{
-		//	print_array_1($settings);
 		self::$settings = $settings;
 		/* view */
-
 		self::html();
 	}
 	private static function html()
@@ -30,7 +28,21 @@ class html
 				$class_meta = $class;
 			}
 		}
+		/* header */
+		if (isset(self::$settings['html']['header'])) {
 
+			$class = self::$settings['html']['header']['class'];
+			$check_ClassAndMethod = \system\functions\sub::check_ClassAndMethod($class);
+			if (isset($check_ClassAndMethod['error'])) {
+				new \Ex($check_ClassAndMethod['error']);
+			} else {
+				$class_header = $class;
+			}
+		} else {
+			if ($_SESSION['auth_a'] === true) {
+				new \Ex('no exists "nav"');
+			}
+		}
 		/* nav */
 		if (isset(self::$settings['html']['nav'])) {
 			$class = self::$settings['html']['nav']['class'];
@@ -68,6 +80,20 @@ class html
 		} else {
 			$class_view = $class;
 		}
+		/* footer */
+		if (isset(self::$settings['html']['footer'])) {
+			$class = self::$settings['html']['footer']['class'];
+			$check_ClassAndMethod = \system\functions\sub::check_ClassAndMethod($class);
+			if (isset($check_ClassAndMethod['error'])) {
+				new \Ex($check_ClassAndMethod['error']);
+			} else {
+				$class_footer = $class;
+			}
+		} else {
+			if ($_SESSION['auth_a'] === true) {
+				new \Ex('no exists "footer"');
+			}
+		}
 
 ?>
 		<!DOCTYPE html>
@@ -83,10 +109,12 @@ class html
 
 		<body>
 			<?php
-
+			if (isset($class_header)) {
+				$class_header::return(['return' => ['html' => null]]);
+			}
 			/* aside */
 			if (isset($class_aside)) {
-				$class_aside::return(['return' => ['html' => null]]);
+				//		$class_aside::return(['return' => ['html' => null]]);
 			}
 			?>
 			<main>
@@ -94,17 +122,19 @@ class html
 				<?php
 				/* nav */
 				if (isset($class_nav)) {
-					$class_nav::return(['return' => ['html' => null]]);
+					//			$class_nav::return(['return' => ['html' => null]]);
 				}
 				/* page_title */
-				self::page_title();
+				//self::page_title();
 				/* view */
-				$class_view::return(['return' => ['html' => null]]);
+				$class_view::return(['return' => ['html' => ['content' => self::$settings['html']['view']['content']]]]);
 
 				?>
 			</main>
 			<?php
-
+			if (isset($class_header)) {
+				$class_footer::return(['return' => ['html' => null]]);
+			}
 			?>
 		</body>
 

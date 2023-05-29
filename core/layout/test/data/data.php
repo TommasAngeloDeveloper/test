@@ -25,6 +25,7 @@ class data
 		'css_min' => 'css_min/', // Папка с css_min
 		'scss' => 'scss/', // Папка с scss
 		'js' => 'js/', // Папка с js
+		'db' => 'db/',
 	];
 	/**************************************************************************/
 	/* Списки файлов */
@@ -37,6 +38,8 @@ class data
 		'css_m' => 'm_' . self::name . '.css', // Имя файла cms стилей
 		'css_min_m' => 'm_' . self::name . '.min.css', // Имя файла cms стилей
 		'js' => self::name . '.js',
+		'db_connect' => 'connect.php',
+		'db_read' => 'read.php'
 	];
 
 	/**************************************************************************/
@@ -44,10 +47,12 @@ class data
 	/**************************************************************************/
 	private  $path = [
 		'views' => self::folders['views'],
-		'apps' => self::folders['system'] . self::folders['apps'],
-		'data' => self::folders['system'] . self::folders['data'],
-		'res' => self::folders['system'] . self::folders['res'],
+		'apps' =>  self::folders['apps'],
+		'data' =>  self::folders['data'],
+		'res' =>  self::folders['res'],
 		'sub' =>  self::folders['sub'],
+		'db' => self::folders['db'],
+		'img' => self::folders['res'] . self::folders['img'],
 	];
 
 	/**************************************************************************/
@@ -64,13 +69,17 @@ class data
 				'css_min_m' =>  self::folders['res'] . self::folders['style'] . self::folders['css_min'] . self::files['css_min_m'],  // Файл с min.css mobile
 			]
 		],
-		/*
+
 		'js' => [
 			self::name  => [
 				self::name => self::folders['res'] . self::folders['js'] . self::files['js'],
 			]
-		], 
-		*/
+		],
+
+		'db' => [
+			'connect' =>  self::folders['db'] .  self::files['db_connect'],
+			'read' =>  self::folders['db'] .  self::files['db_read'],
+		]
 	];
 	use \traits\BaseMethods;
 }

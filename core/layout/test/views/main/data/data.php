@@ -4,7 +4,7 @@ namespace view;
 
 class data
 {
-	private const name = 'a_main'; // Имя файла стилей и скриптов
+	private const name = 'view_main'; // Имя файла стилей и скриптов
 	/**************************************************************************/
 	/* Список папок */
 	/**************************************************************************/
@@ -53,7 +53,7 @@ class data
 		],
 		'js' => [
 			self::name  => [
-				//	self::name => self::folders['res'] . self::folders['js'] . self::files['js'],
+				self::name => self::folders['res'] . self::folders['js'] . self::files['js'],
 			]
 
 		], // Файл с функциями js

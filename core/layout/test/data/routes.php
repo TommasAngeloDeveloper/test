@@ -14,17 +14,17 @@ class routes
 			'btnTitle' => 'layout',
 			'folder_name' => 'main/',
 			'display' => [
-				'nav' => true,
+				'nav' => false,
 				'footer' => false
 			]
 		],
-		'catalog' => [
-			'alias' => 'catalog',
-			'btnText' => 'каталог',
-			'btnTitle' => 'каталог тестовой продукции',
-			'folder_name' => 'catalog/',
+		'work_news' => [
+			'alias' => 'work_news',
+			'btnText' => '',
+			'btnTitle' => '',
+			'folder_name' => 'work_news/',
 			'display' => [
-				'nav' => true,
+				'nav' => false,
 				'footer' => false
 			]
 		],

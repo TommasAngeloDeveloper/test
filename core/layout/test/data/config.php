@@ -8,10 +8,10 @@ class config
 		'meta' => [
 			'title_prefix' => [
 				'status' => true,
-				'value' => 'TEST_@'
+				'value' => ''
 			],
 			'title_page' => [
-				'status' => true,
+				'status' => false,
 				'value' => false
 			]
 		]

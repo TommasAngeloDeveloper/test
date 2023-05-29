@@ -74,8 +74,8 @@ class data
 		],
 		'js' => [
 			'jQuery_v1' =>	self::folders['res'] . self::folders['js'] . self::files['jQuery_v1'],
-			'jQuery_cookie' =>	self::folders['res'] . self::folders['js'] . self::files['jQuery_cookie'],
-			'jQuery_session' =>	self::folders['res'] . self::folders['js'] . self::files['jQuery_session'],
+			//	'jQuery_cookie' =>	self::folders['res'] . self::folders['js'] . self::files['jQuery_cookie'],
+			//	'jQuery_session' =>	self::folders['res'] . self::folders['js'] . self::files['jQuery_session'],
 			'base_function' =>	self::folders['res'] . self::folders['js'] . self::files['js'],
 		],  // Файл с функциями js
 	];

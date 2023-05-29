@@ -42,3 +42,4 @@ function getUrlVars() {
 	}
 	return vars;
 }
+
