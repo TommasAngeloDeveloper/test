@@ -1,0 +1,26 @@
+Options -MultiViews
+#Options +FollowSymLinks
+RewriteEngine On
+# Считываем только index.php
+DirectoryIndex index.php
+# Редирект
+RewriteCond %{HTTP_HOST} ^www.(.*) [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+# Если запрос не файл и не папка, перенаправляем на Index.php
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*) index.php
+
+# Убираем разрешение .php
+ RewriteRule ^(([^/]+/)*[^.]+)$ /$1.php [L]
+# Запрещаем просмотр папок
+Options All -Indexes
+# Собственные страницы ошибок
+ErrorDocument 401 /error.php
+ErrorDocument 403 /error.php
+ErrorDocument 404 /error.php
+ErrorDocument 500 /error.php
+
+
+# Перенаправляем все GET запросы на index.php
+#RewriteRule ^(.+)$ index.php?q=$1 [L,QSA]
