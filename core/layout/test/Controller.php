@@ -33,14 +33,6 @@ class Controller
 		/*****************************************************************************************************************/
 
 		// подключаем файл с информацие о компании
-		$link  = $result__basic['path']['data'] . 'company_info.php';
-		$path_logo = $result__basic['path']['res'] . 'img/logo/';
-		$include = \system\functions\sub::include($link);
-		if (!isset($include['error'])) {
-			$company_info = \company_info\data::getInstance(['path' => [
-				'logo' => $path_logo
-			]]);
-		}
 		$include = \system\functions\sub::include($result__basic['link']['db']['connect']);
 		if (isset($include['error'])) {
 			new \Ex($include['error']);
@@ -55,9 +47,6 @@ class Controller
 		if (isset($result__basic['error'])) {
 			new \Ex($result__basic['error']);
 		} else {
-			foreach ($result__basic['routes'] as $key => $value) {
-				$result__basic['routes'][$key]['alias'] = '/' . $param['alias'] . $value;
-			}
 			self::$settings['basic'] = $result__basic;
 		}
 		// Запускаем роутер и получаем данные вида
@@ -131,6 +120,7 @@ class Controller
 			$return['html']['meta']['js'] += $result['view']['link']['js'];
 		}
 		$return['require'] = $result__view['config']['require'];
+		$return['routes'] = $result['basic']['routes'];
 		return $return;
 	}
 	/**
@@ -142,6 +132,7 @@ class Controller
 		$return = ['error' => 'view not found'];
 		$path_views = self::$_instance->data['path']['views'];
 		$routes = self::$_instance->data['routes'];
+
 		if (!isset($url_array[0])) {
 			$url_array[0] = $routes['main']['alias'];
 		}

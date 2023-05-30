@@ -22,9 +22,6 @@ class html
 
 			<footer class="footer">
 				<div class="ta_container">
-					<div class="text">
-						<span>© 2023 — 2412 «<?= $company_info['company_name']['name'] ?>»</span>
-					</div>
 				</div>
 			</footer>
 <?php

@@ -122,7 +122,7 @@ class html
 				<?php
 				/* nav */
 				if (isset($class_nav)) {
-					//			$class_nav::return(['return' => ['html' => null]]);
+					$class_nav::return(['return' => ['html' => null]]);
 				}
 				/* page_title */
 				//self::page_title();

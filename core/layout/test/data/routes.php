@@ -14,15 +14,25 @@ class routes
 			'btnTitle' => 'layout',
 			'folder_name' => 'main/',
 			'display' => [
-				'nav' => false,
+				'nav' => true,
 				'footer' => false
 			]
 		],
-		'work_news' => [
-			'alias' => 'work_news',
+		'news' => [
+			'alias' => 'news',
+			'btnText' => 'Новости',
+			'btnTitle' => 'Новости',
+			'folder_name' => 'news/',
+			'display' => [
+				'nav' => true,
+				'footer' => false
+			]
+		],
+		'news_article' => [
+			'alias' => 'news_article',
 			'btnText' => '',
 			'btnTitle' => '',
-			'folder_name' => 'work_news/',
+			'folder_name' => 'news_article/',
 			'display' => [
 				'nav' => false,
 				'footer' => false

@@ -13,7 +13,7 @@ class data
 		],
 		'company_name' => [
 			'title' => 'Имя компании',
-			'name' => 'Галактический вестник',
+			'name' => '',
 		],
 	];
 	private function __clone()

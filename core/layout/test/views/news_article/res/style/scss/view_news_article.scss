@@ -1,0 +1,144 @@
+/* Блок последней новости страницы */
+* {
+	font-family: "Open Sans", sans-serif;
+}
+.arrow_img-svg {
+	path {
+		fill: #841844;
+	}
+}
+.block_news {
+	text-align: left;
+	padding: 4rem 0;
+	.block-page_nav {
+		.page_nav-container {
+			.page_nav-wrapper {
+				display: flex;
+				align-items: center;
+				a,
+				span {
+					display: inline-block;
+					width: auto;
+				}
+				a {
+					font-weight: bold;
+				}
+				span {
+					color: gray;
+				}
+				.separator {
+					display: inline-block;
+					padding: 0 0.2rem;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+	.block_news-container {
+		.block_news-wrapper {
+			.block-title_page {
+				.title_page {
+					padding: 2rem 0;
+					.title_page-container {
+						.title_page-wrapper {
+							.title_page-text {
+								padding: 0.5rem 0;
+								font-size: 3rem;
+								font-weight: 600;
+							}
+						}
+					}
+				}
+			}
+			.item {
+				.block-date {
+					.date-container {
+						.date-wrapper {
+							.date-text {
+								display: inline-block;
+								width: 8rem;
+								margin: 1rem;
+								background: #ecf2f5;
+								padding: 0.5rem 1rem;
+								border-radius: 1rem;
+								text-align: center;
+							}
+						}
+					}
+				}
+				.block-item_news {
+					display: flex;
+					flex-wrap: wrap;
+					padding-top: 2rem;
+					justify-content: space-between;
+					padding: 0 3rem;
+					.block-item_announce {
+						padding-bottom: 2rem;
+						.item_announce-container {
+							.item_announce-wrapper {
+								.item_announce-text {
+									font-size: 2rem;
+									color: #841844;
+								}
+							}
+						}
+					}
+					.block-item_content {
+						.item_content-container {
+							.item_content-wrapper {
+								.item_content-text {
+									p {
+										font-size: 1.3rem;
+										margin: 1rem 0;
+										padding: 0.3rem 0;
+									}
+								}
+							}
+						}
+					}
+					.block-btn_back {
+						padding-top: 2rem;
+						.btn_back-container {
+							.btn_back-wrapper {
+								display: inline-flex;
+								justify-content: center;
+								align-items: center;
+								align-content: center;
+								border: 0.2rem solid #9b407a;
+								border-radius: 2rem;
+								padding: 0.5rem 1.5rem;
+								.arrow_img-svg {
+									display: inline-block;
+									width: 2rem;
+									height: 2rem;
+									rotate: 180deg;
+								}
+								.btn_back-text {
+									display: inline-block;
+									width: 100%;
+									margin-left: 1rem;
+									color: #841844;
+									text-transform: uppercase;
+								}
+							}
+							.btn_back-wrapper:hover {
+								cursor: pointer;
+								background: #841844;
+								* {
+									color: #ffffff;
+									cursor: pointer;
+								}
+
+								.arrow_img-svg {
+									path {
+										fill: #ffffff;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

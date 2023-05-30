@@ -5,15 +5,15 @@
 	rgba(237, 209, 44, 1) 100%
 );
 */
-$style__bacground: linear-gradient(90deg, rgb(245, 200, 0) 0%, rgb(239, 207, 0) 35%, rgb(255, 208, 0) 100%);
-
+//$style__bacground: linear-gradient(90deg, rgb(245, 200, 0) 0%, rgb(239, 207, 0) 35%, rgb(255, 208, 0) 100%);
+$style__bacground: rgb(0, 82, 176);
 $header__height: 8rem;
 $header__logo_width: $header__height * 0.7;
 $header__logo_height: $header__logo_width;
 
 $nav__width: 100%; // Ширина Aside
 $nav__height: 3.5rem;
-$nav_btn__color: rgb(52, 52, 52);
+$nav_btn__color: rgb(251, 251, 251);
 $nav_btn__font_size: 1rem;
 $nav_btn__width: 8%;
 $nav_btn__padding: 0.5rem 0.1rem;

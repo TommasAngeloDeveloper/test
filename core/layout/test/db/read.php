@@ -33,7 +33,7 @@ class read
 	{
 
 		$connect = self::$connect;
-		$news__linit_page = 4; // Количество выводимых новостей на странице
+		$news__linit_page = 5; // Количество выводимых новостей на странице
 		$count_pages = self::get_nes__count_pages($news__linit_page); // Подсчитывем колчисетво страниц
 		if (!is_numeric($number_page)) {
 			$number_page = 1;
@@ -45,32 +45,13 @@ class read
 		$news__number_page = $number_page; // Номер страницы
 		$news__select = $news__linit_page * $news__number_page - 	$news__linit_page; // Подсчитываем с какой строки делать выборку
 		$table_name = 'news';
-		$sql = $sql = "SELECT * FROM $table_name  ORDER BY `date` DESC LIMIT 	$news__select,$news__linit_page";
+		$sql = $sql = "SELECT `id`,`idate`,`title`,`announce` FROM $table_name  ORDER BY `idate` DESC LIMIT 	$news__select,$news__linit_page";
 		$result = $connect->query($sql);
 		if ($result->num_rows > 0) {
 			$return['news'] = $result->fetch_all(MYSQLI_ASSOC);
-			$return['news_last'] = self::get_news__last(); // Последння новость
 			$return['count_pages'] = self::get_nes__count_pages($news__linit_page); // Подсчитывем колчисетво страниц
 		} else {
 			$result = null;
-		}
-		return $return;
-	}
-	/**
-	 * Получить последнюю новость
-	 */
-	private static function get_news__last()
-	{
-		$connect = self::$connect;
-		$table_name = 'news';
-		$sql = $sql = "SELECT * FROM $table_name  ORDER BY `date` DESC LIMIT 0,1";
-		$result = $connect->query($sql);
-		if ($result->num_rows > 0) {
-			$result = $result->fetch_all(MYSQLI_ASSOC);
-			$return = $result[0];
-			//	$result = self::sort_news($result);
-		} else {
-			$return = null;
 		}
 		return $return;
 	}
